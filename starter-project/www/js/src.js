@@ -25,11 +25,11 @@
 //   console.log('No es primo.');
 // }
 
-const numero = 59;
+const numero = 24;
 let esPrimo = true;
 
 for (let x = 2; x < numero; x++) {
-  console.log('Resto' + ' ' + (numero % x));
+  console.log('Resto ' + (numero % x));
 
   if (numero % x === 0) {
     esPrimo = false;
