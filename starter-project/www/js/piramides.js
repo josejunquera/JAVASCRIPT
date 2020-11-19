@@ -13,20 +13,21 @@
 // function generarPiramide(numeroPisos) {
 //   let space = '';
 //   for (let i = 1; i <= numeroPisos; i++) {
-//     console.log((space += '*'));
+//     console.log((space = space + '*'));
+//     // console.log(i);
 //   }
 // }
-// generarPiramide(5);
+// generarPiramide(8);
 
 // // PIRAMIDE 2
 
 function generarPiramide(numeroPisos) {
   for (let i = 0; i < numeroPisos; i++) {
     let piso = 'x';
-    // console.log(i);
+    console.log(i);
     for (let j = 1; j <= numeroPisos - i; j++) {
       piso = piso + 'y';
-      // console.log(j);
+      console.log(j);
     }
     for (let k = 1; k <= i + 1; k++) {
       piso = piso + '*';
@@ -35,7 +36,6 @@ function generarPiramide(numeroPisos) {
     console.log(piso);
   }
 }
-
 generarPiramide(5);
 
 // /*¿Por qué incrementa solo x o y en cada bucle y no (piso + x) o (piso + y)?
@@ -74,3 +74,11 @@ generarPiramide(5);
 // }
 
 // generarPiramide(6);
+
+// LOGICA MAS SENCILLA
+
+// let space = ' ';
+// for (let i = 1; i <= 10; i++) {
+//   space = space + '*';
+//   console.log(space);
+// }
