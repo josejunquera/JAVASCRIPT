@@ -1,3 +1,4 @@
+'use strict';
 // const pedirDato = prompt('ola');
 
 // // promt siempre entra como texto
@@ -37,6 +38,7 @@ function defuse() {
     if (+prompt('Code to defuse') === 5) return console.log('Bomb defused');
     else alert('Not defused!');
   }
+  return console.log('Boom');
 }
 
 defuse();
