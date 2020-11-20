@@ -2,11 +2,23 @@
 
 // PIRAMIDE 0
 
+// SIN FUNCIÓN
+
 // const numeroPisos = 5;
 
 // for (let i = 1; i <= numeroPisos; i++) {
 //   console.log(i);
 // }
+
+// CON FUNCIÓN
+
+// function generarPiramide(numeroPisos) {
+//   for (let i = 1; i <= numeroPisos; i++) {
+//     console.log(i);
+//   }
+// }
+
+// generarPiramide(5);
 
 // PIRAMIDE 1
 
@@ -17,45 +29,45 @@
 //     // console.log(i);
 //   }
 // }
-// generarPiramide(8);
+// generarPiramide(5);
 
 // // PIRAMIDE 2
 
-function generarPiramide(numeroPisos) {
-  for (let i = 0; i < numeroPisos; i++) {
-    let piso = 'x';
-    console.log(i);
-    for (let j = 1; j <= numeroPisos - i; j++) {
-      piso = piso + 'y';
-      console.log(j);
-    }
-    for (let k = 1; k <= i + 1; k++) {
-      piso = piso + '*';
-      console.log(k);
-    }
-    console.log(piso);
-  }
-}
-generarPiramide(5);
+// function generarPiramide(numeroPisos) {
+//   for (let i = 0; i < numeroPisos; i++) {
+//     let piso = '';
+//     // console.log(i);
+//     for (let j = 2; j <= numeroPisos - i; j++) {
+//       piso = piso + 'X';
+//       // console.log(j);
+//     }
+//     for (let k = 1; k <= i + 1; k++) {
+//       piso = piso + '*';
+//       // console.log(k);
+//     }
+//     console.log(piso);
+//   }
+// }
+// generarPiramide(5);
 
 // /*¿Por qué incrementa solo x o y en cada bucle y no (piso + x) o (piso + y)?
 
 // // PIRAMIDE 3
 
-// function generarPiramide(numeroPisos) {
-//   for (let i = 0; i < numeroPisos; i++) {
-//     let piso = '';
-//     for (let j = 1; j <= numeroPisos - i; j++) {
-//       piso = piso + ' ';
-//     }
-//     for (let k = 1; k <= 2 * i + 1; k++) {
-//       piso = piso + '*';
-//     }
-//     console.log(piso);
-//   }
-// }
+function generarPiramide(numeroPisos) {
+  for (let i = 0; i < numeroPisos; i++) {
+    let piso = '';
+    for (let j = 1; j <= numeroPisos - i; j++) {
+      piso = piso + ' ';
+    }
+    for (let k = 1; k <= 2 * i + 1; k++) {
+      piso = piso + '*';
+    }
+    console.log(piso);
+  }
+}
 
-// generarPiramide(5);
+generarPiramide(5);
 
 // PIRAMIDE PASCU
 
