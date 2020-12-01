@@ -135,28 +135,30 @@ const countries = [
 
 // NUMERO TOTAL DE INFECTADOS ARRAY DE PERSONAS --> filter y luego reduce
 
-let infectedPeople = persons.filter((person) => {
-  return person.infected === true;
-});
+// let infectedPeople = persons.filter((person) => {
+//   return person.infected === true;
+// });
 
-let totalInfected = infectedPeople.reduce((accumulator, person) => {
-  return accumulator + 1;
-}, 0);
+// let totalInfected = infectedPeople.reduce((accumulator, person) => {
+//   return accumulator + 1;
+// }, 0);
 
-console.log(totalInfected);
+// console.log(totalInfected);
+
 // console.log('Total infectados ' + infectedPeople.length); ---ÑAPA---
 
 // NUMERO TOTAL DE SANOS ARRAY DE PERSONAS
 
-let healthyPeople = persons.filter((person) => {
-  return person.infected !== true;
-});
+// let healthyPeople = persons.filter((person) => {
+//   return person.infected !== true;
+// });
 
-let totalHealthy = healthyPeople.reduce((accumulator, person) => {
-  return accumulator + 1;
-}, 0);
+// let totalHealthy = healthyPeople.reduce((accumulator, person) => {
+//   return accumulator + 1;
+// }, 0);
 
-console.log(totalHealthy);
+// console.log(totalHealthy);
+
 // console.log('Total sanos ' + healthyPeople.length); ---ÑAPA---
 
 // NUMERO TOTAL DE SANOS ARRAY DE PAISES
@@ -195,7 +197,7 @@ console.log(totalHealthy);
 
 // console.log(countries[0].name);
 
-// *** NUMERO TOTAL DE INFECTADOS DEL ARRAY DE PERSONAS
+// NUMERO TOTAL DE INFECTADOS DEL ARRAY DE PERSONAS
 
 // let infectedPeople = persons.filter((person) => {
 //   return person.infected === true;
@@ -204,7 +206,7 @@ console.log(totalHealthy);
 // console.log(infectedPeople);
 // console.log('Total infectados ' + infectedPeople.length);
 
-// *** ARRAY CON EL NOMBRE DE TODAS LAS MASCOTAS
+// ARRAY CON EL NOMBRE DE TODAS LAS MASCOTAS
 
 // let petNames = pets.map((pets) => {
 //   return pets.name;
@@ -246,7 +248,7 @@ console.log(totalHealthy);
 //   const personCopy = { ...person };
 //   const animal = pets.find((animal) => {
 //     return personCopy.pet === animal.name;
-//   });s
+//   });
 //   console.log(animal);
 //   personCopy.petData = animal;
 //   return personCopy;

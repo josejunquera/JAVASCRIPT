@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('hola');
 /*
   Vamos a hacer dos classes una para representar zorros y otra para representar gallinas
   Vamos a tener una clase más que representa una granja
@@ -56,3 +56,5 @@ const miGranja = new Granja(animales);
 console.log(miGranja);
 closeDoor();
 console.log(miGranja);
+
+console.log('hola');
