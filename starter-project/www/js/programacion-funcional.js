@@ -135,25 +135,29 @@ const countries = [
 
 // NUMERO TOTAL DE INFECTADOS ARRAY DE PERSONAS --> filter y luego reduce
 
-// let infectedPeople = persons.filter((person) => {
-//   return person.infected === true;
-// });
+let infectedPeople = persons.filter((person) => {
+  return person.infected === true;
+});
 
-// let totalInfected = infectedPeople.reduce((accumulator, person) => {
-//   return accumulator + 1;
-// }, 0);
+let totalInfected = infectedPeople.reduce((accumulator, person) => {
+  return accumulator + 1;
+}, 0);
 
-// console.log(totalInfected);
+console.log(totalInfected);
 // console.log('Total infectados ' + infectedPeople.length); ---ÑAPA---
 
 // NUMERO TOTAL DE SANOS ARRAY DE PERSONAS
 
-// let healthyPeople = persons.filter((person) => {
-//   return person.infected !== true;
-// });
+let healthyPeople = persons.filter((person) => {
+  return person.infected !== true;
+});
 
-// console.log(healthyPeople);
-// console.log('Total sanos ' + healthyPeople.length);
+let totalHealthy = healthyPeople.reduce((accumulator, person) => {
+  return accumulator + 1;
+}, 0);
+
+console.log(totalHealthy);
+// console.log('Total sanos ' + healthyPeople.length); ---ÑAPA---
 
 // NUMERO TOTAL DE SANOS ARRAY DE PAISES
 
