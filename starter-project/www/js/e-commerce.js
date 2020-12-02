@@ -25,10 +25,6 @@
 const itemNames = ['Camisa', 'Pantalon', 'Calcetines'];
 const itemPrices = [13, 27, 100];
 
-const item = itemNames.map((name, index) => {
-  return [itemNames[index], itemPrices[index]];
-});
-
 class User {
   name;
   cart;
@@ -40,17 +36,29 @@ class User {
     this.cart.push(item);
     return this.cart;
   }
+
+  buy(cart) {
+    return this.cart;
+  }
 }
 
-const names = ['Ivan', 'Lucia', 'Ana'];
-const cards = ['1', '2', '3'];
+class Item {
+  static createItem(i) {
+    let item = {};
+    item.item = itemNames[i];
+    item.price = itemPrices[i];
+    return item;
+  }
+}
 
 const myUser = new User('Paco', []);
 
 console.log(myUser);
 
-// console.log(myUser.addToCart(item[0]));
-// console.log(myUser.addToCart(item[1]));
-// console.log(myUser.addToCart(item[2]));
-// console.log(myUser.addToCart(item[1]));
-// console.log(item);
+myUser.addToCart(Item.createItem(0));
+myUser.addToCart(Item.createItem(1));
+myUser.addToCart(Item.createItem(0));
+myUser.addToCart(Item.createItem(2));
+myUser.addToCart(Item.createItem(2));
+
+console.log(myUser.cart);
