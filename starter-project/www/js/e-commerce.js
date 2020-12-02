@@ -22,6 +22,8 @@
   La ultima linea saca el total de todo el carrito
 */
 
+//nueva clase al añadir para que me añada la cantidad de objetos añadidos "acumulador..."
+
 const itemNames = ['Camisa', 'Pantalon', 'Calcetines'];
 const itemPrices = [13, 27, 100];
 
@@ -36,10 +38,6 @@ class User {
     this.cart.push(item);
     return this.cart;
   }
-
-  buy(cart) {
-    return this.cart;
-  }
 }
 
 class Item {
@@ -48,6 +46,16 @@ class Item {
     item.item = itemNames[i];
     item.price = itemPrices[i];
     return item;
+  }
+}
+
+class Shop {
+  static checkout() {
+    let totalTicket = myUser.cart.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.price;
+    }, 0);
+
+    console.log('Total importe ticket ' + totalTicket);
   }
 }
 
@@ -62,3 +70,4 @@ myUser.addToCart(Item.createItem(2));
 myUser.addToCart(Item.createItem(2));
 
 console.log(myUser.cart);
+Shop.checkout();
