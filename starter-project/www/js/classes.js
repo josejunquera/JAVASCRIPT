@@ -1,5 +1,4 @@
 'use strict';
-console.log('hola');
 /*
   Vamos a hacer dos classes una para representar zorros y otra para representar gallinas
   Vamos a tener una clase más que representa una granja
@@ -23,24 +22,9 @@ console.log('hola');
   -Cerrar puerta - Solo la granja
   */
 
-class Granja {
-  animales;
-  constructor(animales) {
-    this.animales = animales;
-  }
-  closeDoor() {
-    if (this.animales.every(Zorro)) return Zorro.criar(this.animales);
-    else if (this.animales.some(Gallina) && this.animales.some(Zorro)) Zorro.comer(animales);
-    else Zorro.criar(animales);
-  }
-}
-
 class Zorro {
   criar() {
     return new Zorro();
-  }
-  comer(animales) {
-    animales.pop(Gallina);
   }
 }
 
@@ -50,11 +34,30 @@ class Gallina {
   }
 }
 
-const animales = [new Zorro(), new Zorro()];
-const miGranja = new Granja(animales);
+class Granja {
+  #animals;
+
+  constructor(animals) {
+    this.#animals = animals;
+  }
+
+  cerrarPuerta() {
+    const todosZorros = this.#animals.every((animal) => {
+      return animal instanceof Zorro;
+    });
+    const todosGallinas = this.#animals.every((animal) => {
+      return animal instanceof Gallina;
+    });
+    if (todosZorros || todosGallinas) {
+      const newAnimal = this.#animals[0].criar();
+      this.#animals.push(newAnimal);
+    }
+    return this.#animals;
+  }
+}
+
+const animals = [new Zorro(), new Zorro()];
+const miGranja = new Granja(animals);
 
 console.log(miGranja);
-closeDoor();
-console.log(miGranja);
-
-console.log('hola');
+console.log(miGranja.cerrarPuerta());
