@@ -40,6 +40,43 @@ class User {
   }
 }
 
+let Camisa = {
+  Name: itemNames[0],
+  Price: itemPrices[0],
+  ammount: 1,
+};
+
+let Pantalon = {
+  Name: itemNames[1],
+  Price: itemPrices[1],
+  ammount: 1,
+};
+
+let Calcetines = {
+  Name: itemNames[2],
+  Price: itemPrices[2],
+  ammount: 1,
+};
+
+console.log(Camisa);
+console.log(Pantalon);
+console.log(Calcetines);
+
+//PRUEBAS CON item amount para incrementar si se añade un objeto igual...
+
+// class Item {
+//   static createItem(i) {
+//     let item = {};
+
+//     //some y luego found para incrementarlo, lo mete en una nueva clase add2cart...
+//     if (item.some((element) => element === item.item)) item.item = itemNames[i];
+//     item.price = itemPrices[i];
+//     item.ammount = 1;
+//     return item;
+//   }
+// }
+
+// ---ESTO FUNCIONA---
 class Item {
   static createItem(i) {
     let item = {};
@@ -63,7 +100,7 @@ const myUser = new User('Paco', []);
 
 console.log(myUser);
 
-myUser.addToCart(Item.createItem(0));
+myUser.addToCart(Item.createItem(Pantalon));
 myUser.addToCart(Item.createItem(1));
 myUser.addToCart(Item.createItem(0));
 myUser.addToCart(Item.createItem(2));
