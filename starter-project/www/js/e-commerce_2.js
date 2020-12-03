@@ -40,34 +40,35 @@ class User {
   }
 }
 
-class Item {
-  static createItemByIndex(i) {
-    let item = {};
-    item.name = itemNames[i];
-    item.price = itemPrices[i];
-    item.ammount = 1;
-    return item;
+class Items {
+  static createItems() {
+    const items = itemNames.map((value, index) => {
+      const tempItem = { name: itemNames[index], price: itemPrices[index], ammount: 1 };
+      return tempItem;
+    });
+    console.log('ITEMS', items);
   }
 }
+console.log(Items.createItems());
 
-class Shop {
-  static checkout() {
-    let totalTicket = myUser.cart.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue.price;
-    }, 0);
+// class Shop {
+//   static checkout() {
+//     let totalTicket = myUser.cart.reduce((accumulator, currentValue) => {
+//       return accumulator + currentValue.price;
+//     }, 0);
 
-    console.log('Total importe ticket ' + totalTicket);
-  }
-}
+//     console.log('Total importe ticket ' + totalTicket);
+//   }
+// }
 
 const myUser = new User('Paco', []);
 
 console.log(myUser);
 
-myUser.addToCart(Item.createItemByIndex(1));
-myUser.addToCart(Item.createItemByIndex(0));
-myUser.addToCart(Item.createItemByIndex(2));
-myUser.addToCart(Item.createItemByIndex(2));
+// myUser.addToCart(Item.createItem(1));
+// myUser.addToCart(Item.createItem(0));
+// myUser.addToCart(Item.createItem(2));
+// myUser.addToCart(Item.createItem(2));
 
-console.log(myUser.cart);
-Shop.checkout();
+// console.log(myUser.cart);
+// Shop.checkout();
