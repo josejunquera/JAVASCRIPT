@@ -68,6 +68,7 @@ myUser.addToCart(Item.createItemByIndex(1));
 myUser.addToCart(Item.createItemByIndex(0));
 myUser.addToCart(Item.createItemByIndex(2));
 myUser.addToCart(Item.createItemByIndex(2));
+myUser.addToCart(Item.createItemByIndex(2));
 
 console.log(myUser.cart);
 Shop.checkout();
