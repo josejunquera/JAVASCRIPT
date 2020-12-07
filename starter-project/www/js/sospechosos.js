@@ -80,11 +80,14 @@ const suspects = [
 // console.log(sospechosos);
 
 class Sospechoso {
+  // Atributos de la clase
   name;
   eyeColor;
   height;
   tattooed;
   #tip;
+
+  // Constructor para inicializar los atributos de la clase
   constructor(name, eyeColor, height, tattooed, tip) {
     this.name = name;
     this.eyeColor = eyeColor;
@@ -97,8 +100,57 @@ class Sospechoso {
     const sospechosos = names.map((name, index) => {
       return new Sospechoso(names[index], eyeColor[index], height[index], tattooed[index], tip[index]);
     });
-    console.log(sospechosos);
+    return sospechosos;
+  }
+
+  // Generamos un metodo para acceder al atributo "tip" porque es privado
+  getTip() {
+    return this.#tip;
   }
 }
 
-Sospechoso.crearSospechoso();
+// Sospechoso.crearSospechoso();
+
+// // Ejemplo de instancia de un objeto de una clase
+// let newSospechoso = new Sospechoso('Junke', 'black', '180', true, 'feo');
+// console.log(newSospechoso);
+// console.log(newSospechoso.getTip());
+
+class Detective {
+  // Definimos los atributos de la clase
+  tips;
+  culpable;
+
+  constructor() {
+    this.tips = {};
+  }
+
+  // Definimos el metodo para detectar al culpable
+  insvestigar(array) {
+    // Obtenemos cada tip por sospechoso
+    array.forEach((sospechoso) => {
+      let tip = sospechoso.getTip();
+      this.tips[Object.keys(tip)[0]] = tip[Object.keys(tip)[0]];
+    });
+
+    // Obtenemos al culplabe
+    array.forEach((sospechoso) => {
+      if (
+        this.tips.eyeColor === sospechoso.eyeColor &&
+        this.tips.height === sospechoso.height &&
+        this.tips.tattooed === sospechoso.tattooed
+      ) {
+        this.culpable = sospechoso.name;
+      }
+    });
+  }
+}
+
+// Instanciamos objeto de la clase detective
+let d1 = new Detective();
+
+// Investigamos a los sospechosos para obtener el culpable
+d1.insvestigar(Sospechoso.crearSospechoso());
+
+// Mostramos por consola el culpable
+console.log(d1.culpable);
