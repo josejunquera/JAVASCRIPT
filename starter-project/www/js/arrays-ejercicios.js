@@ -60,7 +60,7 @@
 // let array = [];
 
 // for (let i = 0; i < 20; i++) {
-//   array.push(Math.floor(Math.random() * 10));
+//   array.push(Math.floor(Math.random() * 100));
 // }
 // console.log(array);
 
@@ -85,50 +85,61 @@
 // if (array.includes(color)) alert('Si existe el color en el array');
 // else alert('No existe el color en el array');
 
-// STRING Y ARRAYS
+// EJEMPLO MAP
 
-// El usuario ingrese un string con varias palabras separadas por coma en un popup y se deben convertir en un array, (el usuario ingresa: "1,2,3,4,5" y se convierte en [1,2,3,4,5])
+// const people = [
+//   {
+//     name: 'John',
+//     lastName: 'Doe',
+//   },
+//   {
+//     name: 'Jane',
+//     lastName: 'McKain',
+//   },
+// ];
 
-// Convertir un array ingresado dentro del código en un string (existe un método en javascript para hacerlo)
+// const names = people.map((person) => `${person.name} ${person.lastName}`);
 
-// Unión, intersección y conteo
-// Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la intersección de ambos elementos. (Ejemplo: [1,2,3] unión [1,2,4] = [1,2]
+// const names = people.map((person) => person.name + ' ' + person.lastName);
 
-// Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
+// console.log(names);
 
-// El usuario ingresa dos conjuntos de números separados por coma, el programa debe determinar si ambos conjuntos tienen la misma cantidad de números.
+// EJEMPLO FILTER
 
-// El usuario ingresa dos conjuntos de números separados por coma, si ambos conjuntos tienen la misma cantidad de elementos mostrar un arreglo que contenga la suma de cada elemento. (Ejemplo: [1,2,3] + [2,3,4] = [3,5,7])
+// let array = [1, 2, 3, 4, 5, 6];
 
-// Filtrando datos en arreglo
-// Crear una función que reciba un arreglo con números y devuelva un nuevo arreglo con solo los números pares, hint: utilizar reduce()
+// const filtered = array.filter((x) => x < 2);
+// console.log(filtered);
 
-// Crear una función que reciba un arreglo con palabras, crear un nuevo arreglo que contenga solo las palabras que empiezan con una vocal.
+// EJEMPLO REDUCE
 
-// ORDENAMIENTO
+// let array = [1, 2, 3, 4, 5, 6];
 
-// Crear un método que permite intercambiar las posiciones de dos elementos de un arreglo en base a sus índices ej:
+// let reduced = array.reduce((total, value) => total + value);
+// console.log(reduced);
 
-//  arr = [1,2,3]
-//  swap(arr, 0, 1)
-//  console.log(arr) // [2,1,3]
-// Realizar el mismo ejercicio anterior pero que en esta ocasión devuelva un arreglo nuevo con los datos cambiados.
+// EJEMPLOS FOR IN Y FOR OF
 
-//  arr = [1,2,3]
-//  new_arr = swap(arr, 0, 1)
-//  console.log(arr) // [1,2,3]
-//  console.log(new_arr) // [2,1,3]
-// Crear una función que reciba un arreglo y que cree uno nuevo con todos los elementos ordenados de menor a mayor, (sin ocupar el método .sort)
+// const posts = {
+//   id: 1,
+//   title: 'Post Title',
+//   body: 'Post Body',
+// };
 
-// Crear una función que reciba un arreglo y que cree uno nuevo con todos los elementos ordenados de mayor a menor.
+// for (let post in posts) {
+//   console.log(posts[post]);
+// }
+// //devuelve 1, Post Title , Post Body
 
-// ARREGLOS DE ARREGLOS
+// const numbers = [1, 3, 5, 7, 9];
 
-// Crear una función que permite aplanar un arreglo dado, Ejemplo:
+// for (let number in numbers) {
+//   console.log(number);
+// }
+// //devuelve los indices 0,1,2,3,4 no los valores del indice
 
-//  var arr = [[1,2,3],[4,5,6],[7,8,9]];
-//  console.log(aplanar(arr)); // [1,2,3,4,5,6,7,8,9]
-// Crear una función que divida un arreglo en dos partes con la misma cantidad de elementos (o una diferencia de máximo un elemento) y devuelva un arreglo que contenga al grupo1 y al grupo2
+// for (let number of numbers) {
+//   console.log(number);
+// }
 
-//  var arr = [1,2,3,4,5,6,7,8];
-//  console.log(split(arr)); // [[1,2,3,4], [5,6,7,8]]
+// //devuelve los numeros del array 1,3,5,7,9
